@@ -81,3 +81,14 @@ left += 1
 
 ## Brain Trigger (One Line Summary)
 > right expands always, left shrinks only when window breaks, result updates when window is valid.
+
+
+95% of all sliding window problems cover these situations: 
+
+| Situation                            | Use This            |
+| ------------------------------------ | ------------------- |
+| Sum / total of numbers               | int                 |
+| Count of characters / frequency      | dict                |
+| Just checking if char exists or not  | set                 |
+| Track index/position of a character  | dict (char → index) |
+| Count of distinct elements in window | int counter + dict  |
