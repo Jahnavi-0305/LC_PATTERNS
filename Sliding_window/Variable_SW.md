@@ -92,3 +92,7 @@ left += 1
 | Just checking if char exists or not  | set                 |
 | Track index/position of a character  | dict (char → index) |
 | Count of distinct elements in window | int counter + dict  |
+
+More hints:
+LONGEST problems → result = max → update AFTER while loop
+SHORTEST problems → result = min → update INSIDE while loop (before shrinking)
