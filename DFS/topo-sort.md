@@ -1,5 +1,3 @@
-Here's your GitHub-ready notes for Topological Sort — same format as your other patterns.
-
 ## Static Template to Memorize (4 Chunks)
 
 **1. Setup — build graph + tracking structures**
