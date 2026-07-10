@@ -1,3 +1,7 @@
+Topological sort is just a way of ordering tasks so that every task comes after all the tasks it depends on. Think of it like course prerequisites: you can't take "Advanced ML" before "Intro to ML," so topological sort gives you a valid sequence where every prerequisite appears before the course that needs it.
+
+Key idea: It only works on a directed graph with no cycles (DAG). If there's a cycle (A depends on B, B depends on A), there's no valid order, that's actually a common thing interviewers check for.
+
 ## Static Template to Memorize (4 Chunks)
 
 **1. Setup — build graph + tracking structures**
