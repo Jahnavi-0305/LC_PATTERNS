@@ -66,7 +66,7 @@ This is the main scanner. It walks through every row, and inside every row, ever
 ```
 After scanning the whole grid, whatever `count` ended up as is your final answer. [algomaster](https://algomaster.io/learn/dsa/number-of-islands)
 
-## The Big Picture (in Plain English)
+## The Big Picture 
 
 1. Walk across every square of the grid.
 2. Whenever you find land you haven't seen before → that's a NEW island, add 1 to your counter.
