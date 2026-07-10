@@ -97,13 +97,16 @@ for r in range(rows):
             dfs(r, c)
 ```
 
-### 4 Change Points
 
-| # | What changes | Example values |
-|---|---|---|
-| 1 | Guard condition (`NOT_VALID`) | `grid[r][c] != '1'` (Islands) vs `grid[r][c] != 'O'` (Surrounded Regions) |
-| 2 | Visited tracking method (`MARK_VISITED`) | mutate grid in place vs `visited` set vs `visited` 2D array |
-| 3 | DFS payload (extra logic inside dfs) | none (Islands) vs `return 1 + dfs(...)` (Max Area of Island) vs record path (Distinct Islands) |
-| 4 | Where DFS starts (`for` loop trigger) | every unvisited land cell (Islands) vs border cells only (Surrounded Regions) |
+| # | Question to ask | What it means | Example |
+|---|---|---|---|
+| 1 | What counts as "valid" to step on? | The condition in your guard clause | Land = '1', or unburned region = 'O' |
+| 2 | How do I remember what I already visited? | Sink the grid, or use a visited set/array | Turn '1' into '0', or add (r,c) to a set |
+| 3 | What extra work does dfs do? | Besides marking visited, does it return something or record something? | Nothing extra, or return size, or save shape |
+| 4 | Where do I start dfs from? | Every cell, or only some cells | Every land cell, or only border cells |
+
+## How to Use This Table When Revising
+
+Just ask yourself these 4 questions on any new problem, in order. Everything else in the code stays exactly the same as your original islands template.
 
 That's it — 4 rows, done. 
