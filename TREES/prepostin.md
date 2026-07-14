@@ -1,13 +1,12 @@
 ## The Deeper "Hidden" Thing (Why It Actually Matters)
 
-Here's the part that's genuinely useful for interviews, not just memorization: ask yourself **one question** before writing any tree solution: [codeintuition](https://www.codeintuition.io/blogs/binary-tree-traversal)
+Here's the part that's genuinely useful for interviews, not just memorization: ask yourself **one question** before writing any tree solution:
 
 > "Does the parent need an answer FROM its children, or do the children need something FROM the parent?"
 
 - If **children need info from parent** (e.g., passing down a running sum, a depth counter, a max-so-far) → use **preorder** logic (do work, then recurse).
 - If **parent needs info from children** (e.g., tree height, diameter, checking if balanced, sum of subtree) → use **postorder** logic (recurse first, then combine children's results).
-- **Inorder** is special-cased almost only for BST problems, because inorder traversal of a BST gives you sorted order for free. [stackoverflow](https://stackoverflow.com/questions/9456937/when-to-use-preorder-postorder-and-inorder-binary-search-tree-traversal-strate)
-
+- **Inorder** is special-cased almost only for BST problems, because inorder traversal of a BST gives you sorted order for free. 
 ## Full Templates (Recursive)
 
 ```python
