@@ -1,16 +1,16 @@
-The Deeper "Hidden" Thing (Why It Actually Matters)
-Here's the part that's genuinely useful for interviews, not just memorization: ask yourself one question before writing any tree solution:
+## The Deeper "Hidden" Thing (Why It Actually Matters)
 
-"Does the parent need an answer FROM its children, or do the children need something FROM the parent?"
+Here's the part that's genuinely useful for interviews, not just memorization: ask yourself **one question** before writing any tree solution: [codeintuition](https://www.codeintuition.io/blogs/binary-tree-traversal)
 
-If children need info from parent (e.g., passing down a running sum, a depth counter, a max-so-far) → use preorder logic (do work, then recurse).
+> "Does the parent need an answer FROM its children, or do the children need something FROM the parent?"
 
-If parent needs info from children (e.g., tree height, diameter, checking if balanced, sum of subtree) → use postorder logic (recurse first, then combine children's results).
+- If **children need info from parent** (e.g., passing down a running sum, a depth counter, a max-so-far) → use **preorder** logic (do work, then recurse).
+- If **parent needs info from children** (e.g., tree height, diameter, checking if balanced, sum of subtree) → use **postorder** logic (recurse first, then combine children's results).
+- **Inorder** is special-cased almost only for BST problems, because inorder traversal of a BST gives you sorted order for free. [stackoverflow](https://stackoverflow.com/questions/9456937/when-to-use-preorder-postorder-and-inorder-binary-search-tree-traversal-strate)
 
-Inorder is special-cased almost only for BST problems, because inorder traversal of a BST gives you sorted order for free.
+## Full Templates (Recursive)
 
-Full Templates (Recursive)
-python
+```python
 def preorder(node):
     if not node: return
     process(node)
@@ -28,12 +28,13 @@ def postorder(node):
     postorder(node.left)
     postorder(node.right)
     process(node)
-What to Actually Memorize
-The base case is always the same: if not node: return.
+```
 
-The 2 recursive calls are always the same: traverse(node.left) and traverse(node.right).
+## What to Actually Memorize
 
-Only the position of process(node) moves — before, between, or after the two recursive calls.
+- **The base case is always the same**: `if not node: return`.
+- **The 2 recursive calls are always the same**: `traverse(node.left)` and `traverse(node.right)`.
+- **Only the position of `process(node)` moves** — before, between, or after the two recursive calls.
+- **Decision rule**: parent needs child's answer → postorder. Child needs parent's data → preorder. Need sorted BST order → inorder.
 
-Decision rule: parent needs child's answer → postorder. Child needs parent's data → preorder. Need sorted BST order → inorder.
-
+That's genuinely the entire "hidden" thing — once this clicks, you stop needing to separately memorize 3 templates and just remember 1 skeleton + where to place one line.
