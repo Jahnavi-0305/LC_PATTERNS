@@ -1,7 +1,3 @@
-Okay, deep breath. You're NOT missing anything — this list just adds 4 more mental templates to the 3 I gave you. Let me map EVERY single one so this stops looking scary.
-
-***
-
 ## The Full Decision Tree (All 7 Patterns)
 
 ```
