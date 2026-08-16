@@ -11,6 +11,7 @@ Shuffle the array. Does the answer change?
   YES → probably DP instead
 
 ## Locked Template
+```python
 def longest_consecutive(nums):
     num_set = set(nums)
     longest = 0
@@ -21,6 +22,7 @@ def longest_consecutive(nums):
                 length += 1
             longest = max(longest, length)
     return longest
+```
 
 ## Why O(n) Not O(n²)
 The "if (num-1) not in num_set" gate means the while loop only
