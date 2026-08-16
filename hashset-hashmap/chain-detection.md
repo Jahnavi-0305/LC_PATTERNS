@@ -30,9 +30,9 @@ runs for TRUE starting numbers. Total while-loop work across
 the whole run sums to O(n).
 
 ## Sibling Problems
-- 128. Longest Consecutive Sequence
-- 1218. Longest Arithmetic Subsequence of Given Difference (step = difference)
-- 298. Binary Tree Longest Consecutive Sequence (same logic, tree-shaped)
+128. Longest Consecutive Sequence
+1218. Longest Arithmetic Subsequence of Given Difference (step = difference)
+298. Binary Tree Longest Consecutive Sequence (same logic, tree-shaped)
 
 ## Brain Trigger
 > Set for O(1) lookup. Only start counting from true chain starts.
