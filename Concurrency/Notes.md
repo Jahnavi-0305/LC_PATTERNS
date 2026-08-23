@@ -6,3 +6,10 @@
 | Event                              | from threading import Event     | event = Event()         | event.wait() to block, event.set() to release everyone waiting                        | Simple one-time "go" signal for many threads at once (simpler than Condition) |
 | Thread                             | from threading import Thread    | t = Thread(target=func) | t.start() then t.join()                                                               | Actually runs a function on a separate thread                                 |
 | Queue (built-in producer-consumer) | from queue import Queue         | q = Queue(maxsize=5)    | q.put(item) / q.get()                                                                 | Auto-blocking queue, no manual locking needed                                 |
+
+
+SOLVE ANY PROBLEM USING THIS: 
+
+figuring out the count of semaphores and locks is the **first concrete step**, but it only works after you first figure out **what conditions threads need to wait for**. So the real order is: identify the waiting conditions (what is each thread blocked on, and what event should unblock it), then map each distinct condition to one semaphore, and use a lock only when you need to protect shared data from being read/written by two threads at the exact same instant.
+
+In Dining Philosophers, the conditions were "don't let all 5 grab forks at once" → one semaphore, plus "don't let two people touch the same fork" → 5 locks. In the Bounded Queue, the conditions were "don't add when full" and "don't remove when empty" → two semaphores, plus "don't let two threads scribble on the list simultaneously" → one lock. So yes, counting semaphores and locks is the mechanical step you do, but the actual skill is spotting the waiting conditions first — the count naturally falls out once you've named those correctly.
