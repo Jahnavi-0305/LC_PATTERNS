@@ -43,6 +43,8 @@ If yes → this template. If you need to look back arbitrarily far, or revisit/u
 
 That's the full reusable skeleton — two variables, one loop, two lines that change per problem.
 
+O(1) space DP is KADANE:
+
 **Best Time to Buy/Sell Stock is genuinely DP** — not "kind of like DP," not "a bridge to DP." Here's the honest formal version:
 
 Define `dp[i] = min price seen from day 0 to day i`. Then the answer at each day is `prices[i] - dp[i-1]`, and you take the max over all days. That min-price-so-far *is* the DP state — it's exactly "today's answer depends on yesterday's state," which is your own definition of DP from earlier in this conversation. So I wasn't wrong to call it DP — where I was sloppy was calling the Kadane's template a "seed" or "bridge" into DP, like it's a separate, lesser thing that leads up to real DP. That's misleading. It isn't a stepping stone to DP. **It is DP** — specifically, 1D DP where you only need the immediately previous state, so you collapse the DP array into a single running variable instead of keeping a full `dp[]` array.
